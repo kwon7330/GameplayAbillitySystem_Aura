@@ -14,7 +14,7 @@ AAuraPlayerController::AAuraPlayerController()
 void AAuraPlayerController::PlayerTick(float DeltaTime)
 {
 	Super::PlayerTick(DeltaTime);
-
+	CursorTrace();
 	
 }
 void AAuraPlayerController::CursorTrace()
@@ -53,27 +53,27 @@ void AAuraPlayerController::CursorTrace()
 		}
 	}
 	else // Last Actor is Valid
+	{
+		if(ThisActor == nullptr)
 		{
-			if(ThisActor == nullptr)
+			//Case 3
+			LastActor->UnHighlightActor();
+		}
+		else // BothActor is Valid
+		{
+			if(LastActor != ThisActor)
 			{
-				//Case 3
-				LastActor -> UnHighlightActor();
+				// Case 4
+				LastActor->UnHighlightActor();
+				ThisActor->HighlightActor();
 			}
-			else // Both actors are Valid
+			else
 			{
-				if(LastActor != ThisActor)
-				{
-					//Case 4
-					LastActor->UnHighlightActor();
-					ThisActor->HighlightActor();
-				}
-				else
-				{
-				// Case 5 = 아무것도 하지 않는다.
-				}
+				//Case 5
+				//아무것도 하지않는다.
 			}
 		}
- 
+	}	
 }
 
 void AAuraPlayerController::BeginPlay()

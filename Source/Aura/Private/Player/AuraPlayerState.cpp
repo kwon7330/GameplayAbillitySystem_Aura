@@ -10,6 +10,7 @@ AAuraPlayerState::AAuraPlayerState()
 {
 	AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>("AbilitySystemComponent");
 	AbilitySystemComponent -> SetIsReplicated(true);
+	AbilitySystemComponent -> SetReplicationMode(EGameplayEffectReplicationMode::Mixed);
 
 	AttributeSet = CreateDefaultSubobject<UAttributeSet>("AttributeSet");
 	// 얼마나 자주 서버에서 클라이언트에 업데이트를 알려주는 함수이다.

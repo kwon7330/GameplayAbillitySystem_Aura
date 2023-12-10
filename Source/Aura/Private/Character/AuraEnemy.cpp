@@ -3,12 +3,20 @@
 
 #include "Character/AuraEnemy.h"
 
+#include "AbilitySystemComponent.h"
 #include "ClassViewerModule.h"
+
 #include "Aura/Aura.h"
 
 AAuraEnemy::AAuraEnemy()
 {
 	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility,ECR_Block);
+
+	AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>("AbilitySystemComponent");
+	AbilitySystemComponent -> SetIsReplicated(true);
+
+	AttributeSet = CreateDefaultSubobject<UAttributeSet>("AttributeSet");
+	
 }
 
 // Highlight를 켜주는 함수. PostProcessing_Mat를 사용하여 아웃라인을 생성시킨다.

@@ -8,9 +8,9 @@ public class Aura : ModuleRules
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore","EnhancedInput" });
-
-		PrivateDependencyModuleNames.AddRange(new string[] {  });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore","EnhancedInput","GameplayAbilities" });
+		// GAS를 위해 Plugin을 설치하고 AbilitySystemComp와 AttributeSet을 만들고 모듈을 추가해 주었다.
+		PrivateDependencyModuleNames.AddRange(new string[] { "GameplayTags","GameplayTasks" });
 
 		// Uncomment if you are using Slate UI
 		// PrivateDependencyModuleNames.AddRange(new string[] { "Slate", "SlateCore" });

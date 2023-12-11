@@ -27,7 +27,6 @@ public:
 	// 변수를 선언하고
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_Health, Category="Vital Attribute") // 복제지정자
 	FGameplayAttributeData Health;
-
 	// 접근자 메크로 GAMEPLAYATTRIBUTE_PROPERTY_GETTER(ClassName, PropertyName) 에 사용
 	ATTRIBUTE_ACCESSORS(UAuraAttributeSet,Health);
 

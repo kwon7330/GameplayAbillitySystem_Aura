@@ -5,8 +5,13 @@
 #include "AbilitySystemComponent.h"
 #include "Net/UnrealNetwork.h"
 
+// 메크로를 사용하여 접근 하여 값을 초기화한다.
 UAuraAttributeSet::UAuraAttributeSet()
 {
+	InitHealth(100.f);
+	InitMaxHealth(100.f);
+	InitMana(50.f);
+	InitMaxMana(50.f);
 }
 
 // 복제하려는 모든 항목에 필요한 복제할 상태를 등록하는 곳

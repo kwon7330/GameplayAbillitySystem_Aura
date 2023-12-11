@@ -11,8 +11,9 @@
 AAuraEnemy::AAuraEnemy()
 {
 	GetMesh()->SetCollisionResponseToChannel(ECC_Visibility,ECR_Block);
-
+	// Enemy에 ASC를 붙여준다.
 	AbilitySystemComponent = CreateDefaultSubobject<UAbilitySystemComponent>("AbilitySystemComponent");
+	// 선언된 ASC를 복사하겠다.
 	AbilitySystemComponent -> SetIsReplicated(true);
 	AbilitySystemComponent -> SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
 

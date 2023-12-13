@@ -19,7 +19,7 @@ AAuraEffectActor::AAuraEffectActor()
 	Sphere = CreateDefaultSubobject<USphereComponent>("Sphere");
 	Sphere -> SetupAttachment(GetRootComponent());
 	
-
+ 
 }
 
 void AAuraEffectActor::OnOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,

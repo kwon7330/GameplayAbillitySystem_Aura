@@ -85,9 +85,12 @@ void AAuraPlayerController::BeginPlay()
 	// IMC 받기위해 변수 Sbusystem을 만든다.
 	UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer());
 
-	check(Subsystem);
-	// IMC를 받는다.
-	Subsystem->AddMappingContext(AuraContext,0);
+	if(Subsystem)
+	{
+		// IMC를 받는다.
+		Subsystem->AddMappingContext(AuraContext,0);
+	}
+	
 
 	// 마우스를 게임 화면에 보이게 하기 위한 작업
 	bShowMouseCursor = true;
